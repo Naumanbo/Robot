@@ -30,7 +30,7 @@ public class AutonomousRed extends LinearOpMode {
 
     public void runOpMode() {
 
-// Simple code for 2nd competition, not the best but it gets the job done, will work on encoders next. Simply time based.
+// Simple code for 2nd competition, not the best but it gets the job done, will work on encoders nfdfdfdext. Simply time based.
         robot.init(hardwareMap);
         waitForStart();
 
