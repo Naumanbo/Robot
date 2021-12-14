@@ -73,8 +73,8 @@ class HardwareRobot
         // Set directions of motors for teleop/auto
         rightFront.setDirection(DcMotor.Direction.FORWARD);
         rightBack.setDirection(DcMotor.Direction.FORWARD);
-        leftFront.setDirection(DcMotor.Direction.FORWARD);
-        leftBack.setDirection(DcMotor.Direction.FORWARD);
+        leftFront.setDirection(DcMotor.Direction.REVERSE);
+        leftBack.setDirection(DcMotor.Direction.REVERSE);
 
 
 
@@ -96,16 +96,16 @@ class HardwareRobot
     public void driveForward (double pow){
         rightFront.setPower(pow);
         rightBack.setPower(pow);
-        leftFront.setPower(-pow);
-        leftBack.setPower(-pow);
+        leftFront.setPower(pow);
+        leftBack.setPower(pow);
     }
 
 
     public void turnLeft (double pow){
         rightFront.setPower(pow);
         rightBack.setPower(pow);
-        leftFront.setPower(pow);
-        leftBack.setPower(pow);
+        leftFront.setPower(-pow);
+        leftBack.setPower(-pow);
     }
 
     public void carouselRed (){
@@ -120,8 +120,8 @@ class HardwareRobot
     public void strafeRight (double pow){
         rightFront.setPower(-pow);
         rightBack.setPower(pow);
-        leftFront.setPower(-pow);
-        leftBack.setPower(pow);
+        leftFront.setPower(pow);
+        leftBack.setPower(-pow);
     }
 
 
