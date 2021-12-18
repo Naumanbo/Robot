@@ -3,11 +3,7 @@ package org.firstinspires.ftc.Robot;
 
 
 import com.qualcomm.robotcore.hardware.DcMotor;
-
-import com.qualcomm.robotcore.hardware.CRServo;
-
 import com.qualcomm.robotcore.hardware.HardwareMap;
-
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 
@@ -31,12 +27,12 @@ class HardwareRobot
     public DcMotor  rightBack   =null;
     public DcMotor  leftFront   =null;
     public DcMotor  leftBack    =null;
-    public DcMotor  intakeRight =null;
-    public DcMotor  intakeLeft  =null;
-    public DcMotor  cascade     =null;
-    public DcMotor  conveyor    =null;
+//    public DcMotor  intakeRight =null;
+//    public DcMotor  intakeLeft  =null;
+//    public DcMotor  cascade     =null;
+//    public DcMotor  conveyor    =null;
 
-    public CRServo  carousel    =null;
+//    public CRServo  carousel    =null;
 
     /* local OpMode members. */
 
@@ -62,13 +58,13 @@ class HardwareRobot
         rightBack   = hwMap.get(DcMotor.class, "rightBack");
         leftFront   = hwMap.get(DcMotor.class, "leftFront");
         leftBack    = hwMap.get(DcMotor.class, "leftBack");
-        intakeRight = hwMap.get(DcMotor.class, "intakeRight");
-        intakeLeft  = hwMap.get(DcMotor.class, "intakeLeft");
-        cascade     = hwMap.get(DcMotor.class, "cascade");
-        conveyor    = hwMap.get(DcMotor.class, "conveyor");
+//        intakeRight = hwMap.get(DcMotor.class, "intakeRight");
+//        intakeLeft  = hwMap.get(DcMotor.class, "intakeLeft");
+//        cascade     = hwMap.get(DcMotor.class, "cascade");
+//        conveyor    = hwMap.get(DcMotor.class, "conveyor");
 
         //initialize Servos
-        carousel = hwMap.get(CRServo.class, "carousel");
+//        carousel = hwMap.get(CRServo.class, "carousel");
 
         // Set directions of motors for teleop/auto
         rightFront.setDirection(DcMotor.Direction.REVERSE);
@@ -79,7 +75,7 @@ class HardwareRobot
 
 
         // Set direction of Continous Servo to only move one direction by carousel
-        carousel.setDirection(CRServo.Direction.FORWARD);
+//        carousel.setDirection(CRServo.Direction.FORWARD);
     }
 
 
@@ -116,12 +112,12 @@ class HardwareRobot
     }
 
     public void carouselRed (){
-        carousel.setPower(1);
+//        carousel.setPower(1);
     }
 
 
     public void carouselBlue (){
-        carousel.setPower(-1);
+//        carousel.setPower(-1);
     }
 
     public void strafeRight (double pow){

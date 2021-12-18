@@ -57,7 +57,7 @@ public class Robot extends LinearOpMode {
             drive= gamepad1.left_stick_y;
             strafe= gamepad1.left_stick_x;
             spin= gamepad1.right_stick_x;
-            intakePower = -gamepad1.right_stick_y;
+//            intakePower = -gamepad1.right_stick_y;
             //TELEOP
 
             //***Wheel Movement***
@@ -71,28 +71,28 @@ public class Robot extends LinearOpMode {
 
             //Set intake power
 
-            robot.intakeRight.setPower((-intakePower));
-            robot.intakeLeft.setPower((intakePower));
+//            robot.intakeRight.setPower((-intakePower));
+//            robot.intakeLeft.setPower((intakePower));
 
             /*Setup controls for Cascading Slide */
 
             //Cascade Up
             if (gamepad2.left_stick_y < -0.5)
             {
-                robot.cascade.setPower(-1);
+//                robot.cascade.setPower(-1);
             }
 
             //Cascade Down
             if (gamepad2.left_stick_y > 0.5)
             {
-                robot.cascade.setPower(1);
+//                robot.cascade.setPower(1);
             }
 
             //Stop Cascading Motor
             if (gamepad2.left_stick_y >= -0.5 && gamepad2.left_stick_y <= 0.5)
             {
 
-                robot.cascade.setPower(0.0);
+//                robot.cascade.setPower(0.0);
             }
             /* Set Up controls for Conveyor */
 
@@ -100,19 +100,19 @@ public class Robot extends LinearOpMode {
 
             if (gamepad2.right_stick_y > 0.5)
             {
-                robot.conveyor.setPower(0.5);
+//                robot.conveyor.setPower(0.5);
             }
             // Conveyor Back
             if (gamepad2.right_stick_y < -0.5)
             {
-                robot.conveyor.setPower(-0.5);
+//                robot.conveyor.setPower(-0.5);
             }
 
             //Stop Conveyor Motor
 
             if (gamepad2.left_stick_y >= -0.5 && gamepad2.left_stick_y <= 0.5)
             {
-                robot.conveyor.setPower(0.0);
+//                robot.conveyor.setPower(0.0);
             }
 
             /* Set up Carousel Controls (Dpad_Left: Red / Dpad_right: Blue) */
@@ -120,17 +120,17 @@ public class Robot extends LinearOpMode {
             //Carousel Back
             if (gamepad2.dpad_left)
             {
-                robot.carousel.setPower(-1);
+//                robot.carousel.setPower(-1);
             }
             else {
-                robot.carousel.setPower(0);
+//                robot.carousel.setPower(0);
             }
 
             //Carousel Forward
             if (gamepad2.dpad_right) {
-                robot.carousel.setPower(1);
+//                robot.carousel.setPower(1);
             } else {
-                robot.carousel.setPower(0);
+//                robot.carousel.setPower(0);
             }
         }
 
