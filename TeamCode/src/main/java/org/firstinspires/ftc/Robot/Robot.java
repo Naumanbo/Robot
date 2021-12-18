@@ -3,8 +3,6 @@ package org.firstinspires.ftc.Robot;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-
-
 @TeleOp(name="Robot", group="RobotHardware")
 
 public class Robot extends LinearOpMode {
@@ -13,17 +11,27 @@ public class Robot extends LinearOpMode {
     HardwareRobot robot = new HardwareRobot(); // Using Robot hardware
 
     //Variables
-    double drive;
-    double strafe;
-    double spin;
-    double intakePower;
     @Override
     public void runOpMode() throws InterruptedException
-
     {
+        double x1;
+        double y1;
+
+        double fortyFiveinRads = -Math.PI/4;
+        double cosin45 = Math.cos(fortyFiveinRads);
+        double sine45 = Math.sin(fortyFiveinRads);
+
+        double x2;
+        double y2;
+
+        double spin;
+
+
+
+     //   double intakePower;
+        robot.init(hardwareMap);
         telemetry.addData("Status", "Initialize Hardware");
         telemetry.update();
-        robot.init(hardwareMap);
 
         // Send telemetry message to signify robot waiting;
         telemetry.addData("Status", "Hello! Waiting For Start");
@@ -54,20 +62,22 @@ public class Robot extends LinearOpMode {
 
             //Gamepad 1
 
-            drive= gamepad1.left_stick_y;
-            strafe= gamepad1.left_stick_x;
-            spin= gamepad1.right_stick_x;
+            y1 = -gamepad1.left_stick_y;
+            x1 = gamepad1.left_stick_x;
+            spin = gamepad2.right_stick_x;
+
+            y2 = y1 * cosin45 + x1*sine45;
+            x2 = x1 * cosin45 - y1*sine45;
+
+           // spin= gamepad1.right_stick_x;
 //            intakePower = -gamepad1.right_stick_y;
-            //TELEOP
 
             //***Wheel Movement***
 
-            // set power of wheels
-
-            robot.rightFront.setPower(spin + (-drive + strafe));
-            robot.rightBack.setPower(spin + (-drive - strafe));
-            robot.leftFront.setPower(spin + (-drive - strafe));
-            robot.leftBack.setPower(spin + (-drive + strafe));
+            robot.rightFront.setPower((y2) + spin);
+            robot.rightBack.setPower((x2) + spin);
+            robot.leftFront.setPower((x2) + spin);
+            robot.leftBack.setPower((y2) + spin);
 
             //Set intake power
 
