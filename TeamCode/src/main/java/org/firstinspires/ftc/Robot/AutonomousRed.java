@@ -1,13 +1,9 @@
 package org.firstinspires.ftc.Robot;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.util.Hardware;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.util.Range;
-import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
 
 @Autonomous(name = "AutoRed", group = "RobotHardware")
@@ -35,7 +31,7 @@ public class AutonomousRed extends LinearOpMode {
         waitForStart();
 
         //Move Forward
-        robot.driveForward(0.5);
+ /*       robot.driveForward(0.5);
         sleep(450);
 
         //Turn 90 degrees
@@ -53,9 +49,7 @@ public class AutonomousRed extends LinearOpMode {
 
         // Strafe Right into parking spot
         robot.strafeRight(0.5);
-        sleep(2100);
-
-/*  Code with encoders:
+        sleep(2100); */
 
     robot.rightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
     robot.rightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -80,12 +74,12 @@ public class AutonomousRed extends LinearOpMode {
 
     }
 
-     *  Method to perform a relative move, based on encoder counts.
+    /*  Method to perform a relative move, based on encoder counts.
      *  Encoders are not reset as the move is based on the current position.
      *  Move will stop if any of three conditions occur
      *  1) Move gets to the desired position
      *  2) Move runs out of time
-     *  3) Driver stops the opmode running.
+     *  3) Driver stops the opmode running. */
 
 
     public void encoderDrive(double speed,
@@ -168,7 +162,7 @@ public class AutonomousRed extends LinearOpMode {
 
             //  sleep(250);   // optional pause after each move
         }
-        */
+
 
     }
 

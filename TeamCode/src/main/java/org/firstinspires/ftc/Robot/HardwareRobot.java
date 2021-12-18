@@ -71,10 +71,10 @@ class HardwareRobot
         carousel = hwMap.get(CRServo.class, "carousel");
 
         // Set directions of motors for teleop/auto
-        rightFront.setDirection(DcMotor.Direction.FORWARD);
-        rightBack.setDirection(DcMotor.Direction.FORWARD);
-        leftFront.setDirection(DcMotor.Direction.REVERSE);
-        leftBack.setDirection(DcMotor.Direction.REVERSE);
+        rightFront.setDirection(DcMotor.Direction.REVERSE);
+        rightBack.setDirection(DcMotor.Direction.REVERSE);
+        leftFront.setDirection(DcMotor.Direction.FORWARD);
+        leftBack.setDirection(DcMotor.Direction.FORWARD);
 
 
 
@@ -100,12 +100,19 @@ class HardwareRobot
         leftBack.setPower(pow);
     }
 
-
-    public void turnLeft (double pow){
+    public void turnRight (double pow) {
         rightFront.setPower(pow);
         rightBack.setPower(pow);
         leftFront.setPower(-pow);
         leftBack.setPower(-pow);
+    }
+
+
+    public void turnLeft (double pow){
+        rightFront.setPower(-pow);
+        rightBack.setPower(-pow);
+        leftFront.setPower(pow);
+        leftBack.setPower(pow);
     }
 
     public void carouselRed (){
@@ -118,6 +125,13 @@ class HardwareRobot
     }
 
     public void strafeRight (double pow){
+        rightFront.setPower(pow);
+        rightBack.setPower(pow);
+        leftFront.setPower(pow);
+        leftBack.setPower(pow);
+    }
+
+    public void strafeLeft(double pow) {
         rightFront.setPower(-pow);
         rightBack.setPower(pow);
         leftFront.setPower(pow);

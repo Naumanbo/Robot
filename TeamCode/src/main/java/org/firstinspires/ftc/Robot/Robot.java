@@ -16,7 +16,6 @@ public class Robot extends LinearOpMode {
     double drive;
     double strafe;
     double spin;
-    double lift;
     double intakePower;
     @Override
     public void runOpMode() throws InterruptedException
@@ -55,9 +54,9 @@ public class Robot extends LinearOpMode {
 
             //Gamepad 1
 
-            drive= -gamepad1.left_stick_y;
-            strafe= (gamepad1.left_stick_x);
-            spin= -gamepad1.right_stick_x;
+            drive= gamepad1.left_stick_y;
+            strafe= gamepad1.left_stick_x;
+            spin= gamepad1.right_stick_x;
             intakePower = -gamepad1.right_stick_y;
             //TELEOP
 
@@ -65,10 +64,10 @@ public class Robot extends LinearOpMode {
 
             // set power of wheels
 
-            robot.rightFront.setPower((drive-strafe+spin));
-            robot.rightBack.setPower((drive+strafe+spin));
-            robot.leftFront.setPower((-drive-strafe+spin));
-            robot.leftBack.setPower((-drive+strafe+spin));
+            robot.rightFront.setPower(spin + (-drive + strafe));
+            robot.rightBack.setPower(spin + (-drive - strafe));
+            robot.leftFront.setPower(spin + (-drive - strafe));
+            robot.leftBack.setPower(spin + (-drive + strafe));
 
             //Set intake power
 
@@ -134,7 +133,6 @@ public class Robot extends LinearOpMode {
                 robot.carousel.setPower(0);
             }
         }
-
 
 
     }
