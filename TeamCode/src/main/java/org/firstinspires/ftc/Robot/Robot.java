@@ -64,20 +64,29 @@ public class Robot extends LinearOpMode {
 
             y1 = -gamepad1.left_stick_y;
             x1 = gamepad1.left_stick_x;
-            spin = gamepad2.right_stick_x;
 
             y2 = y1 * cosin45 + x1*sine45;
             x2 = x1 * cosin45 - y1*sine45;
 
-           // spin= gamepad1.right_stick_x;
+            spin= gamepad1.right_stick_x;
 //            intakePower = -gamepad1.right_stick_y;
+
+            if (Math.abs(spin) > 0.1)
+            {
+                robot.rightFront.setPower((y2) - spin);
+                robot.rightBack.setPower((x2) - spin);
+
+                robot.leftFront.setPower((x2) + spin);
+                robot.leftBack.setPower((y2) + spin);
+
+            }
 
             //***Wheel Movement***
 
-            robot.rightFront.setPower((y2) + spin);
-            robot.rightBack.setPower((x2) + spin);
-            robot.leftFront.setPower((x2) + spin);
-            robot.leftBack.setPower((y2) + spin);
+            robot.rightFront.setPower((y2));
+            robot.rightBack.setPower((x2));
+            robot.leftFront.setPower((x2));
+            robot.leftBack.setPower((y2));
 
             //Set intake power
 
